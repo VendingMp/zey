@@ -664,7 +664,7 @@ denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 	        denz.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {contextInfo: {"mentionedJid": ane}})
             }
 		const reply = (teks) => {
-			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/62895383201495?text=Assalamualaikum`}}})
+			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6285866295942?text=Assalamualaikum`}}})
 		}
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
@@ -923,12 +923,12 @@ denz.updatePresence(from, Presence.recording)
 ├ _Info Nomor : ${num.data.country_code} - ${num.data.carrier.type} - ${num.data.carrier.name}_
 │
 └───「 \`\`\`${NamaBot}\`\`\` 」`
-sendButLocation(from, `${menu}`, "*_© Dcode Denpa_*", {jpegThumbnail:ofrply}, [{buttonId:`${prefix}command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`${prefix}My Website`,buttonText:{displayText:'SOURCE CODE'},type:1}], {contextInfo: { mentionedJid: [dtod,otod,stod]}})
+sendButLocation(from, `${menu}`, "*_© Dcode Denpa_*", {jpegThumbnail:ofrply}, [{buttonId:`${prefix}command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'My Website'},type:1}], {contextInfo: { mentionedJid: [dtod,otod,stod]}})
 break
 case 'command':
  listMsg = {
  buttonText: 'LIST MENU',
- footerText: '*_© Zenx Bot_*',
+ footerText: '*_© Dcode Denpa_*',
  description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini`,
  sections: [
                      {
@@ -987,7 +987,7 @@ menu = `❏ 「 \`\`\`MENU OWNER\`\`\` 」
 ├ ${prefix}autorespon [ _on/off_ ]
 ├ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
 ├ ${prefix}tobc [ _reply sticker/audio with caption_ ]
-├ ${prefix}return [ _java_ ]
+├ ${prefix}return [ _javascript_ ]
 ├ ${prefix}clearall
 ├ ${prefix}delchat
 ├ ${prefix}mute
@@ -1162,7 +1162,7 @@ katalog(menu)
 break
 case 'jadibot':
 client.version = [2, 2119, 6]
-client.browserDescription = ['ZenxBot','Desktop','3.0']
+client.browserDescription = ['Dcode Denpa','Desktop','3.0']
 if (args[0] && args[0].length > 200) {
 	let json = Buffer.from(args[0], 'base64').toString('utf-8')
     let obj = JSON.parse(json)
@@ -1215,7 +1215,7 @@ for (let i of ownerNumber) {
 const vname = denz.contacts[i] != undefined ? denz.contacts[i].vname || denz.contacts[i].notify : undefined
 ini_list.push({
 "displayName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;ZenxBot;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Dcode Denpa;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 denz.sendMessage(from, {
@@ -1253,11 +1253,10 @@ teksnyee += `\n\n*❏ ID :* ${i.id}\n*❏ Cmd :* ${i.chats}`
 }
 reply(teksnyee)
 break
-				case '':
-		case 'sc':
-		case 'sourcecode':
-		denz.sendMessage(from, { text: "https://www.zenxnovel.xyz 
-		My Website 😀😃", matchedText: 'https://zenxnovel.xyz', description: ""Click To Open", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+				case 'script':
+		case 'myweb':
+		case 'My Website':
+		denz.sendMessage(from, { text: "https://zenxnovel.xyz", matchedText: 'https://zenxnovel.xyz', description: "", title: "don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 		break
        case 'debug':
 			 res = await denz.prepareMessageFromContent(from,{
@@ -1315,8 +1314,8 @@ case 'debug2':
     "hydratedButtons": [
       {
         "urlButton": {
-          "displayText": `My Website ${NamaBot}`,
-          "url": "https://www.zenxnovel.xyz"
+          "displayText": `Script ${NamaBot}`,
+          "url": "https://github.com/dcode-denpa"
         },
         "index": 0
       }
@@ -3506,7 +3505,7 @@ Giliran = @${tty.player1.split('@')[0]}`
             if (!e.includes("Cannot set property 'mtype' of undefined")) {
             if (!e.includes("jid is not defined")) {
      console.log(color('|ERR|', 'red'), color(e, 'cyan'))
-     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Zenx Bot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/62895383201495?text=Assalamualaikum"}}})
+     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/6285866295942?text=Assalamualaikum"}}})
 	}
     }
     }
